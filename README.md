@@ -1,4 +1,8 @@
-Move in this folder then
+Install required libs from requirements.txt:
+
+    $ pip install -r requirements.txt
+
+Then
     
     $ make html
     
