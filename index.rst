@@ -19,6 +19,8 @@ Contents:
    src/NOTIFICATION
    src/LOCATION
    src/TIME
+   src/BATTERY
+   src/WIFI
 
 Indices and tables
 ==================
