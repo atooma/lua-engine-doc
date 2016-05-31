@@ -9,7 +9,7 @@ Every lua method call returns two values:
 
 Even if in all DOC is omitted, every method call should be assigned to 2 vars.
 Error object will be not NIL if an error occurred.
-Error can happen from a variety of different causes, eg: timeout error if the method call is taking too much time, or exception error in an exception was thrown during the method call.
+Error can happen from a variety of different causes, eg: timeout error if the method call is taking too much time, or exception error if an exception was thrown during the method call.
 Every module has its own set of error codes, plus an error library with generic errors (the 2 aforementioned) is always included.
 
 ----------------
@@ -76,7 +76,7 @@ Examples
     auth, err = google.requestAuth { scope = "https://www.googleapis.com/auth/gmail.readonly" }
     if (auth) then
         notification.showNotification { title = "auth", content = "granted" }
-    else if (err.code == google.AUTH_NOT_GRANTED)
+    else if (err.code == google.AUTH_NOT_GRANTED) then
         notification.showNotification { title = "auth", content = "not granted" }
     end
     
