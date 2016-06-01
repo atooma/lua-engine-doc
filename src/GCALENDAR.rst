@@ -1,78 +1,34 @@
-=================
 GCALENDAR
-=================
-This module is needed to manage user calendars.
+************************
 
-----------------
-Exposed methods
-----------------
+.. module:: gcalendar
+   :synopsis: Module that handles interaction with GCalendar
 
-^^^^^^^^^^^
-startPubSub
-^^^^^^^^^^^
+Members
+=========================
+.. function:: startPubsub({ email = nil })
 
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
+  "Start the pubsub for the account passed"
 
-* email (string)
+  :param str email: mail of the account
 
-"""""""""""""
-Return value
-"""""""""""""
-It returns an empty object if everything was successful, or NIL if an error happened.
+.. function:: stopPubsub({ email = nil })
 
-""""""""""""""
-Example
-""""""""""""""
-.. highlight:: lua
+  "Stop the pubsub for the account passed"
 
-::
+  :param str email: mail of the account
 
-    gcalendar.startPubSub { email = "xxxxxx@gmail.com" }
-    
-^^^^^^^^^^^
-stopPubSub
-^^^^^^^^^^^
+.. function:: getEvents({ calendar=nil, timeMax="", timeMin="" })
 
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
+  "Retrieve all the events in the calendar of the user"
 
-* email (string)
-
-"""""""""""""
-Return value
-"""""""""""""
-It returns an empty object if everything was successful, or NIL if an error happened.
-
-""""""""""""""
-Example
-""""""""""""""
-
-::
-
-    gcalendar.stopPubSub { email = "xxxxxx@gmail.com" }
-
-^^^^^^^^^^^
-getEvents
-^^^^^^^^^^^
-
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
-
-* calendar object
-
-Optionals:
-
-* timeMax (string)
-* timeMin (string)
-
-If not specified, getEvents will retrieve every calendar's event.
+  :param instance calendar: :py:class:`gcalendar.GCalendarCalendar` **required**
+  :param str timeMix: from which date retrieve events
+  :param str timeMax: till which date retrieve events
+  :return: :py:class:`gcalendar.GcalendarEventsEvent`
+  :raises: SCOPE_NOT_FOUND
+  :raises: ACCOUNT_NOT_FOUND
+  :raises: CALENDAR_NOT_FOUND
 
 """""""""""""
 Return value
@@ -87,7 +43,7 @@ It returns an object that lists every event in the specified time frame.
 Example
 """"""""""""""
 
-::
+.. highlight:: lua
 
     calEvents = gcalendar.getEvents { calendar = calendar, timeMax = to, timeMin = from }
     for i = 0, calEvents:getSize()-1 do

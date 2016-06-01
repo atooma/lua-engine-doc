@@ -1,87 +1,31 @@
-=================
 GMAIL
-=================
-This module is needed to manage gmail.
+************************
 
-----------------
-Exposed methods
-----------------
+.. module:: gmail
+   :synopsis: Module that handles interaction with Gmail
 
-^^^^^^^^^^^
-sendMail
-^^^^^^^^^^^
+Members
+=========================
+.. function:: sendMail({ sender="", recipient="", subject="", content="" })
 
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
+  "Send a mail from sender to recipient"
 
-* Sender
-* Recipient
-* Subject
-* Content
+  :param str sender: mail of the sender
+  :param str recipient: mail of the recipient
+  :param str subject: subject of the mail
+  :param str content: content of the mail
+  :raises: GMAIL_SEND_FAIL: the mail could not be sent
+  :raises: SCOPE_NOT_FOUND
+  :raises: ACCOUNT_NOT_FOUND
 
-"""""""""""""
-Return value
-"""""""""""""
-It returns an empty object if everything was successful, or NIL if an error happened.
+.. lua:function:: startPubsub({ email = nil })
 
-""""""""""""""
-Example
-""""""""""""""
-.. highlight:: lua
+  "Start the pubsub for the account passed"
 
-::
+  :param str email: mail of the account
 
-    gmail.sendMail { sender = email, 
-                     recipient = email, 
-                     subject = "test",
-                     content = text }
+.. lua:function:: stopPubsub({ email = nil })
 
-^^^^^^^^^^^
-startPubSub
-^^^^^^^^^^^
+  "Stop the pubsub for the account passed"
 
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
-
-* email
-
-"""""""""""""
-Return value
-"""""""""""""
-It returns an empty object if everything was successful, or NIL if an error happened.
-
-""""""""""""""
-Example
-""""""""""""""
-
-::
-
-    gmail.startPubSub { email = "xxxxxx@gmail.com" }
-
-^^^^^^^^^^^
-stopPubSub
-^^^^^^^^^^^
-
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
-
-* email
-
-"""""""""""""
-Return value
-"""""""""""""
-It returns an empty object if everything was successful, or NIL if an error happened.
-
-""""""""""""""
-Example
-""""""""""""""
-
-::
-
-    gmail.stopPubSub { email = "xxxxxx@gmail.com" }
+  :param str email: mail of the account

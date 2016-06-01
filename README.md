@@ -1,3 +1,5 @@
+http://lua-engine-doc.readthedocs.io/en/latest/
+
 Install required libs from requirements.txt:
 
     $ pip install -r requirements.txt

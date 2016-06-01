@@ -1,34 +1,28 @@
-=================
 BATTERY
-=================
-This module is needed to manage battery.
+************************
 
-----------------
-Exposed methods
-----------------
+.. module:: battery
+   :synopsis: Module that handles interaction with the device battery
 
-^^^^^^^^^^^^^^^^
-getBatteryStatus
-^^^^^^^^^^^^^^^^
+Members
+=========================
 
-"""""""""""""
-Return value
-"""""""""""""
-It returns an object holding current battery info.
-Retrieve them with these methods:
+.. function:: getBatteryStatus()
 
-* isCharging (ret: boolean)
-* isUsbCharge (ret: boolean)
-* isAcCharge (ret: boolean)
-* getLevel (ret: float)
+  "Return the current Battery status"
 
-""""""""""""""
-Example
-""""""""""""""
-.. highlight:: lua
+  :rtype: :py:class:`battery.BatteryStatusEvent
 
-::
+.. py:class:: BatteryStatusEvent
 
-    battery.getBatteryStatus {}
-    notification.showNotification { title = "battery level", content = tostring(batt:getLevel()) }
+   .. py:method:: isCharging()
+   :returns: true if the battery is charging
+
+   .. py:method:: isUsbCharge()
+   
+   .. py:method:: isAcCharge()
+   
+   .. py:method:: getLevel()
+
+
     
