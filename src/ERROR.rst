@@ -60,6 +60,7 @@ Storage
 ^^^^^^^^^^^
 * KEY_NOT_FOUND
 * RULE_NOT_FOUND
+* OBJECT_NULL
 
 ^^^^^^^^^^^
 Weather
