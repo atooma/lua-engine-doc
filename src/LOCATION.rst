@@ -24,8 +24,8 @@ Return value
 """""""""""""
 It returns an object with user latitude and longitude.
 
-* getLatitude
-* getLongitude
+* getLatitude (ret: string)
+* getLongitude (ret: string)
 
 """"""""""""""
 Example

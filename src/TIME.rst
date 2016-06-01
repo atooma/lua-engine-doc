@@ -16,7 +16,7 @@ Return value
 """""""""""""
 It returns an object with user timezone ID.
 
-* getId to retrieve ID.
+* getId to retrieve ID. (ret: string)
 
 """"""""""""""
 Example

@@ -17,10 +17,10 @@ Return value
 It returns an object holding current wifi info.
 Retrieve them with these methods:
 
-* getWifiName (string)
-* getIp (int)
-* getLinkSpeed (int)
-* getMacAddress (string)
+* getWifiName (ret: string)
+* getIp (ret: int)
+* getLinkSpeed (ret: int)
+* getMacAddress (ret: string)
 
 """"""""""""""
 Example

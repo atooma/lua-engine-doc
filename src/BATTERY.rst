@@ -17,10 +17,10 @@ Return value
 It returns an object holding current battery info.
 Retrieve them with these methods:
 
-* getCharging (boolean)
-* getUsbCharge (boolean)
-* getAcCharge (boolean)
-* getLevel (float)
+* isCharging (ret: boolean)
+* isUsbCharge (ret: boolean)
+* isAcCharge (ret: boolean)
+* getLevel (ret: float)
 
 """"""""""""""
 Example

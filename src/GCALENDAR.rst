@@ -16,7 +16,7 @@ Arguments
 """""""""""
 **Required**:
 
-* email
+* email (string)
 
 """""""""""""
 Return value
@@ -41,7 +41,7 @@ Arguments
 """""""""""
 **Required**:
 
-* email
+* email (string)
 
 """""""""""""
 Return value
@@ -69,8 +69,8 @@ Arguments
 
 Optionals:
 
-* timeMax
-* timeMin
+* timeMax (string)
+* timeMin (string)
 
 If not specified, getEvents will retrieve every calendar's event.
 
@@ -79,6 +79,10 @@ Return value
 """""""""""""
 It returns an object that lists every event in the specified time frame.
 
+* getSize (ret: int -> number of events)
+* getEvents (ret: arraylist)
+* getEvent(int index) (ret: calendar event object)
+
 """"""""""""""
 Example
 """"""""""""""
@@ -86,6 +90,10 @@ Example
 ::
 
     calEvents = gcalendar.getEvents { calendar = calendar, timeMax = to, timeMin = from }
+    for i = 0, calEvents:getSize()-1 do
+        evt = calEvents:getEvent(i)
+        print evt:getSummary()
+    end
     
 ^^^^^^^^^^^
 addEvent
@@ -109,7 +117,15 @@ Optionals:
 """""""""""""
 Return value
 """""""""""""
-It returns an object with event's specified field.
+It returns a gcalendar event object with event's specified field. Retrieve them with:
+
+* getCreator (ret: string)
+* getSummary (ret : string)
+* getId (ret: string)
+* getLocation (ret: string)
+* getDescription (ret: string)
+* getStart (ret: string)
+* getEnd (ret: string)
 
 """"""""""""""
 Example
@@ -142,7 +158,7 @@ Optionals:
 """""""""""""
 Return value
 """""""""""""
-It returns an object needed to call other gcalendarLib methods.
+It returns a calendar object needed to call other gcalendarLib methods.
 
 """"""""""""""
 Example

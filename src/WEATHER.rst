@@ -27,15 +27,16 @@ Return value
 """""""""""""
 It returns an object with lots of information. Retrieve them with these methods:
 
-* getDay
-* getSummary
-* getHumidity
-* getPrecipProbability
-* getMaxTemp
-* getMinTemp
-* getWindSpeed
-* getSunriseTime
-* getSunsetTime
+* getSize (ret: int) number of days
+* getDay (ret: string) 
+* getSummary (ret: string)
+* getHumidity (ret: double)
+* getPrecipProbability (ret: double)
+* getMaxTemp (ret: double)
+* getMinTemp (ret: double)
+* getWindSpeed (ret: double)
+* getSunriseTime (ret: string)
+* getSunsetTime (ret: string)
 
 """"""""""""""
 Example
