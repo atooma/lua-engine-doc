@@ -18,13 +18,13 @@ Members
   :raises: SCOPE_NOT_FOUND
   :raises: ACCOUNT_NOT_FOUND
 
-.. lua:function:: startPubsub({ email = nil })
+.. function:: startPubsub({ email = nil })
 
   "Start the pubsub for the account passed"
 
   :param str email: mail of the account
 
-.. lua:function:: stopPubsub({ email = nil })
+.. function:: stopPubsub({ email = nil })
 
   "Stop the pubsub for the account passed"
 
