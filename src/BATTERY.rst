@@ -11,7 +11,7 @@ Members
 
   "Return the current Battery status"
 
-  :rtype: :py:class:`battery.BatteryStatusEvent
+  :rtype: :py:class:`battery.BatteryStatusEvent`
 
 .. py:class:: BatteryStatusEvent
 
