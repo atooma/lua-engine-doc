@@ -8,6 +8,7 @@ Members
 =========================
 
 .. function:: getWifiStatus()
+
   "Return current wifi status"
 
   :rtype: :py:class:`wifi.WifiStatusEvent`
@@ -27,7 +28,9 @@ Members
    :returns: mac address
 
 .. function:: enable()
+
   "Enables device's wifi"
   
   .. function:: disable()
+  
   "Disables device's wifi"
