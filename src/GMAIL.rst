@@ -14,9 +14,9 @@ Members
   :param str recipient: mail of the recipient
   :param str subject: subject of the mail
   :param str content: content of the mail
-  :raises: GMAIL_SEND_FAIL: the mail could not be sent
-  :raises: SCOPE_NOT_FOUND
-  :raises: ACCOUNT_NOT_FOUND
+  :raises: GMAIL_SEND_FAIL: mail could not be sent
+  :raises: SCOPE_NOT_FOUND: requested scope could not be found
+  :raises: ACCOUNT_NOT_FOUND: requested account could not be found
 
 .. function:: startPubsub({ email = nil })
 

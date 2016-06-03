@@ -1,41 +1,28 @@
-=================
 LOCATION
-=================
-This module is needed to get user location.
+************************
 
-----------------
-Exposed methods
-----------------
+.. module:: location
+   :synopsis: Module that handles interaction with device's location sensor
 
-^^^^^^^^^^^^^^^^^^
-getCurrentLocation
-^^^^^^^^^^^^^^^^^^
+Members
+=========================
+.. function:: getCurrentLocation({ accuracy="", locationTimeout="" })
 
-"""""""""""
-Arguments
-"""""""""""
-Optionals:
+  "get current device location"
+    
+  :param str accuracy: "high" or "low". Defaults to "low". OPTIONAL
+  :param str locationTimeout: timeout of the request, in seconds. Defaults to 10s. OPTIONAL
+  :raises: LOCATION_SERVICES_DISABLED: device's location services are disabled
+  :raises: GPS_DISABLED: gps is disabled
+  :raises: NO_GEOLOCATION_SERVICES: device has no geolocation services
+  :raises: LOCATION_TIMEOUT: location request took more than locationTimeout value
+  :rtype: :py:class:`location.CurrentLocationEvent`
 
-* accuracy ("high" or "low"), defaults to "low"
-* locationTimeout (in seconds), defaults to 10s
+.. py:class:: CurrentLocationEvent
 
-"""""""""""""
-Return value
-"""""""""""""
-It returns an object with user latitude and longitude.
+   .. py:method:: getLatitude()
+   :returns: current device's latitude
 
-* getLatitude (ret: string)
-* getLongitude (ret: string)
-
-""""""""""""""
-Example
-""""""""""""""
-.. highlight:: lua
-
-::
-
-    loc = location.getCurrentLocation {}
-     w = weather.getWeather { latitude = loc:getLatitude(), 
-                              longitude = loc:getLongitude(), 
-                              numDays = 3 }
+   .. py:method:: getLongitude()
+   :returns: current device's longitude
 

@@ -19,10 +19,13 @@ Members
    :returns: true if the battery is charging
 
    .. py:method:: isUsbCharge()
+   :returns: true if the battery is charging through usb
    
    .. py:method:: isAcCharge()
+   :returns: true if the battery is charging through AC
    
    .. py:method:: getLevel()
+   :returns: battery level
 
 
     

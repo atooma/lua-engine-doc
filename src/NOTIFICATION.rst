@@ -1,59 +1,20 @@
-===================
 NOTIFICATION
-===================
-This module is needed to push notifications to user phone.
+************************
 
-----------------
-Exposed methods
-----------------
+.. module:: notification
+   :synopsis: Module that handles notification sending to android device
 
-^^^^^^^^^^^^^^^^^^
-showNotification
-^^^^^^^^^^^^^^^^^^
+Members
+=========================
+.. function:: showNotification({ title = "", content = "" })
 
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
+  "Send a notification to android device"
+  
+  :param str title: notification's title
+  :param str content: notification's content
+  
+.. function:: showToast({ content = "" })
 
-* title
-* content
+ "Send a toast notification to android device"
 
-"""""""""""""
-Return value
-"""""""""""""
-It returns an empty object if everything was successful, or NIL if an error happened.
-
-""""""""""""""
-Example
-""""""""""""""
-.. highlight:: lua
-
-::
-
-    notification.showNotification { title = "hello", content = "world" }
-
-^^^^^^^^^^^^^^^^^^
-showToast
-^^^^^^^^^^^^^^^^^^
-
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
-
-* content
-
-"""""""""""""
-Return value
-"""""""""""""
-It returns an empty object if everything was successful, or NIL if an error happened.
-
-""""""""""""""
-Example
-""""""""""""""
-.. highlight:: lua
-
-::
-
-    notification.showTOast { content = "hello world" }
+  :param str content: notification's content

@@ -1,69 +1,33 @@
-=================
 WIFI
-=================
-This module is needed to manage wifi.
+************************
 
-----------------
-Exposed methods
-----------------
+.. module:: wifi
+   :synopsis: Module that handles interaction with device's wifi
 
-^^^^^^^^^^^^^^
-getWifiStatus
-^^^^^^^^^^^^^^
+Members
+=========================
 
-"""""""""""""
-Return value
-"""""""""""""
-It returns an object holding current wifi info.
-Retrieve them with these methods:
+.. function:: getWifiStatus()
+  "Return current wifi status"
 
-* getWifiName (ret: string)
-* getIp (ret: int)
-* getLinkSpeed (ret: int)
-* getMacAddress (ret: string)
+  :rtype: :py:class:`wifi.WifiStatusEvent`
 
-""""""""""""""
-Example
-""""""""""""""
-.. highlight:: lua
+.. py:class:: WifiStatusEvent
 
-::
+   .. py:method:: getWifiName()
+   :returns: current connected wifi name
 
-    name = wifi.getWifiStatus {}
-    notification.showNotificaton { title = "wifi", content = name:getWifiName() }
+   .. py:method:: getIp()
+   :returns: current ip
+   
+   .. py:method:: getLinkSpeed()
+   :returns: link speed
+   
+   .. py:method:: getMacAddress()
+   :returns: mac address
 
-
-^^^^^^^^^
-enable
-^^^^^^^^^
-
-"""""""""""""
-Return value
-"""""""""""""
-It does return anything.
-
-""""""""""""""
-Example
-""""""""""""""
-
-::
-
-    wifi.enable {}
-
-    
-^^^^^^^^^
-disable
-^^^^^^^^^
-
-"""""""""""""
-Return value
-"""""""""""""
-It does return anything.
-
-""""""""""""""
-Example
-""""""""""""""
-
-::
-
-    wifi.disable {}
+.. function:: enable()
+  "Enables device's wifi"
+  
+  .. function:: disable()
+  "Disables device's wifi"

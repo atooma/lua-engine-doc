@@ -1,59 +1,27 @@
-=================
 GOOGLE
-=================
-This module is needed to manage auth requests for current user.
+************************
 
-----------------
-Exposed methods
-----------------
+.. module:: google
+   :synopsis: Module that handles interaction with Google
 
-^^^^^^^^^^^
-requestAuth
-^^^^^^^^^^^
+Members
+=========================
+.. function:: requestAuth({ scope = "" })
 
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
+  "Request auth on specified scopes"
 
-* scope
+  :param str scope: list of scopes
+  :raises: AUTH_FAIL: auth failed
+  :raises: AUTH_NOT_GRANTED: user did not grant auth
+  :raises: SCOPE_NOT_FOUND: scope could not be found
+  :raises: UNRECOVERABLE_AUTH_EXCEPTION: an unrecoverable exception was thrown
+    
+.. function:: removeAuth({ email = "", scope = "" })
 
-"""""""""""""
-Return value
-"""""""""""""
-It returns an empty object if everything was successful, or NIL if an error happened.
-
-""""""""""""""
-Example
-""""""""""""""
-.. highlight:: lua
-
-::
-
-    google.requestAuth { scope = "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/gmail.compose" }
-
-^^^^^^^^^^^
-removeAuth
-^^^^^^^^^^^
-
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
-
-* scope
-* email
-
-"""""""""""""
-Return value
-"""""""""""""
-It returns an empty object if everything was successful, or NIL if an error happened.
-
-""""""""""""""
-Example
-""""""""""""""
-
-::
-
-    google.removeAuth { scope = "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/gmail.compose", email = "xxxxxxx@gmail.com" }
+  "Remove auth for email user, on specified scopes"
+    
+  :param str scope: list of scopes
+  :param str email: user mail address
+  :raises: ACCOUNT_NOT_FOUND: account could not be found
+  :raises: SCOPE_NOT_FOUND: scope could not be found
 

@@ -1,60 +1,45 @@
-=================
 TIME
-=================
-This module is needed to get time informations.
+************************
 
-----------------
-Exposed methods
-----------------
+.. module:: time
+   :synopsis: Module that exposes time related methods
 
-^^^^^^^^^^^
-getTimezone
-^^^^^^^^^^^
+Members
+=========================
+.. function:: getTimezone()
 
-"""""""""""""
-Return value
-"""""""""""""
-It returns an object with user timezone ID.
+  "Get device's timezone"
+  
+  :rtype: :py:class:`time.TimezoneEvent`
 
-* getId to retrieve ID. (ret: string)
+.. py:class:: TimezoneEvent
 
-""""""""""""""
-Example
-""""""""""""""
-.. highlight:: lua
+   .. py:method:: getId()
+   :returns: timezone ID
 
-::
+.. function:: getDate()
 
-     tz = time.getTimezone():getId()
+  "Get current timedate"
+  
+  :param str timezone: timezone ID
+  
+  :rtype: :py:class:`time.DateEvent`
 
-^^^^^^^^^^^
-getDate
-^^^^^^^^^^^
+.. py:class:: DateEvent
 
-"""""""""""
-Arguments
-"""""""""""
-Optionals
-
-* timezone ID (defaults to atooma-engine timezone)
-
-"""""""""""""
-Return value
-"""""""""""""
-It returns an object containing current timedate.
-
-* getDate -> returns a rfc3339 string holding current date
-* setTime -> change Hour, Minute, Seconds and Milliseconds time
-* setDay -> change day
-
-""""""""""""""
-Example
-""""""""""""""
-
-::
+   .. py:method:: getDate()
+   :returns: rfc3339 string of current date
+   
+   .. py:method:: setTime()
+    :returns: void
+    :description: set Hour/Minute/Second/Millisecond of current DateEvent object.
+    :param int hour: set current DateEvent hour
+    :param int minute: set current DateEvent minute
+    :param int second: set current DateEvent second
+    :param int millisecond: set current DateEvent millisecond
     
-    tz = time.getTimezone():getId()
-    date = time.getDate { timezone = tz }
-    date:setTime(0,0,0,0)
-    date:setDay(1)
-    notification.showNotification { title = "tomorrow at midnight date", content = date:getDate() }
+   .. py:method:: setDay()
+    :returns: void
+    :description: set Day of current DateEvent object.
+    :param int day: move Date $day forward/backward (if $day < 0)
+    

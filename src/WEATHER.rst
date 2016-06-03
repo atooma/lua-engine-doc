@@ -1,51 +1,58 @@
-=================
 WEATHER
-=================
-This module is needed to get weather data from forecastIO.
+************************
 
-----------------
-Exposed methods
-----------------
+.. module:: weather
+   :synopsis: Module needed to get weather informations
 
-^^^^^^^^^^^
-getWeather
-^^^^^^^^^^^
+Members
+=========================
+.. function:: getWeather({ latitude=, longitude=, numDays= })
 
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
+  "get weather forecasts"
+    
+  :param double latitude: location's latitude
+  :param double longitude: location's longitude
+  :param int numDays: number of days for forecasts. Defaults to 1 (today only). OPTIONAL
+  :raises: NO_WEATHER_DATA: no data available for required location
+  :rtype: :py:class:`weather.WeatherEvent`
 
-* latitude, longitude
+.. py:class:: WeatherEvent
 
-Optionals:
+   .. py:method:: getSize()
+   :returns: number of days forecasts cover
 
-* numDays -> Number of days forecasts should cover. Defaults to 1 (today only) if not explicitly set.
-
-"""""""""""""
-Return value
-"""""""""""""
-It returns an object with lots of information. Retrieve them with these methods:
-
-* getSize (ret: int) number of days
-* getDay (ret: string) 
-* getSummary (ret: string)
-* getHumidity (ret: double)
-* getPrecipProbability (ret: double)
-* getMaxTemp (ret: double)
-* getMinTemp (ret: double)
-* getWindSpeed (ret: double)
-* getSunriseTime (ret: string)
-* getSunsetTime (ret: string)
-
-""""""""""""""
-Example
-""""""""""""""
-.. highlight:: lua
-
-::
-
-    w = weather.getWeather { latitude = loc:getLatitude(), 
-                             longitude = loc:getLongitude(), 
-                             numDays = 3 }
-
+   .. py:method:: getDay()
+   :param int day: desired day (from 0 to getSize())
+   :returns: $day date
+   
+   .. py:method:: getSummary()
+   :param int day: desired day (from 0 to getSize())
+   :returns: $day weather summary
+   
+   .. py:method:: getHumidity()
+   :param int day: desired day (from 0 to getSize())
+   :returns: $day humidity
+   
+   .. py:method:: getPrecipProbability()
+   :param int day: desired day (from 0 to getSize())
+   :returns: $day precipitations probability
+   
+   .. py:method:: getMaxTemp()
+   :param int day: desired day (from 0 to getSize())
+   :returns: $day max temp
+   
+   .. py:method:: getMinTemp()
+   :param int day: desired day (from 0 to getSize())
+   :returns: $day min temp
+   
+   .. py:method:: getWindSpeed()
+   :param int day: desired day (from 0 to getSize())
+    :returns: $day wind speed
+    
+    .. py:method:: getSunriseTime()
+    :param int day: desired day (from 0 to getSize())
+    :returns: $day sunrise time
+    
+    .. py:method:: getSunsetTime()
+    :param int day: desired day (from 0 to getSize())
+    :returns: $day sunset time

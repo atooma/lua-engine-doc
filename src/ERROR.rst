@@ -1,6 +1,5 @@
-=================
 ERROR
-=================
+************************
 
 Every lua method call returns two values:
 
