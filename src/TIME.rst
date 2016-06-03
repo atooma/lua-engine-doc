@@ -30,16 +30,11 @@ Members
    .. py:method:: getDate()
    :returns: rfc3339 string of current date
    
-   .. py:method:: setTime()
+   .. py:method:: setTime(int hour, int minute, int second, int millisecond)
     :returns: void
     :description: set Hour/Minute/Second/Millisecond of current DateEvent object.
-    :param int hour: set current DateEvent hour
-    :param int minute: set current DateEvent minute
-    :param int second: set current DateEvent second
-    :param int millisecond: set current DateEvent millisecond
     
-   .. py:method:: setDay()
+   .. py:method:: setDay(int day)
     :returns: void
-    :description: set Day of current DateEvent object.
-    :param int day: move Date $day forward/backward (if $day < 0)
+    :description: add $day to current DateEvent object day.
     

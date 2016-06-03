@@ -21,38 +21,29 @@ Members
    .. py:method:: getSize()
    :returns: number of days forecasts cover
 
-   .. py:method:: getDay()
-   :param int day: desired day (from 0 to getSize())
+   .. py:method:: getDay(int day)
    :returns: $day date
    
-   .. py:method:: getSummary()
-   :param int day: desired day (from 0 to getSize())
+   .. py:method:: getSummary(int day)
    :returns: $day weather summary
    
-   .. py:method:: getHumidity()
-   :param int day: desired day (from 0 to getSize())
+   .. py:method:: getHumidity(int day)
    :returns: $day humidity
    
-   .. py:method:: getPrecipProbability()
-   :param int day: desired day (from 0 to getSize())
+   .. py:method:: getPrecipProbability(int day)
    :returns: $day precipitations probability
    
-   .. py:method:: getMaxTemp()
-   :param int day: desired day (from 0 to getSize())
+   .. py:method:: getMaxTemp(int day)
    :returns: $day max temp
    
-   .. py:method:: getMinTemp()
-   :param int day: desired day (from 0 to getSize())
+   .. py:method:: getMinTemp(int day)
    :returns: $day min temp
    
-   .. py:method:: getWindSpeed()
-   :param int day: desired day (from 0 to getSize())
+   .. py:method:: getWindSpeed(int day)
     :returns: $day wind speed
     
-    .. py:method:: getSunriseTime()
-    :param int day: desired day (from 0 to getSize())
+    .. py:method:: getSunriseTime(int day)
     :returns: $day sunrise time
     
-    .. py:method:: getSunsetTime()
-    :param int day: desired day (from 0 to getSize())
+    .. py:method:: getSunsetTime(int day)
     :returns: $day sunset time

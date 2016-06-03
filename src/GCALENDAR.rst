@@ -6,13 +6,13 @@ GCALENDAR
 
 Members
 =========================
-.. function:: startPubsub({ email = nil })
+.. function:: startPubsub({ email = "" })
 
   "Start the pubsub for the account passed"
 
   :param str email: mail of the account
 
-.. function:: stopPubsub({ email = nil })
+.. function:: stopPubsub({ email = "" })
 
   "Stop the pubsub for the account passed"
 
@@ -22,192 +22,102 @@ Members
 
   "Retrieve all the events in the calendar of the user"
 
-  :param instance calendar: :py:class:`gcalendar.GCalendarCalendar` **required**
-  :param str timeMix: from which date retrieve events
-  :param str timeMax: till which date retrieve events
-  :return: :py:class:`gcalendar.GcalendarEventsEvent`
+  :param instance calendar: :py:class:`gcalendar.GCalendarCalendar`
+  :param str timeMix: from which date retrieve events. Defaults to first calendar's event. OPTIONAL
+  :param str timeMax: till which date retrieve events. Defaults to now. OPTIONAL
   :raises: SCOPE_NOT_FOUND
   :raises: ACCOUNT_NOT_FOUND
   :raises: CALENDAR_NOT_FOUND
+  :rtype: :py:class:`gcalendar.GcalendarEventsEvent`
+  
+  
+.. py:class:: GcalendarEventsEvent
 
-"""""""""""""
-Return value
-"""""""""""""
-It returns an object that lists every event in the specified time frame.
+   .. py:method:: getSize()
+   :returns: number of events
 
-* getSize (ret: int -> number of events)
-* getEvents (ret: arraylist)
-* getEvent(int index) (ret: calendar event object)
+   .. py:method:: getEvents()
+   :returns: arraylist of all events found
+   
+   .. py:method:: getEvent(int index)
+   :returns: GcalendarEvent object
+   
+.. function:: addEvent({ calendar=nil, startTime="", endTime="", description = "", location = "", summary = "" })
 
-""""""""""""""
-Example
-""""""""""""""
+  "Add a calendar event"
+  
+  :param instance calendar: :py:class:`gcalendar.GCalendarCalendar`
+  :param str startTime: starting time of the event
+  :param str endTime: ending time of the event
+  :param description: event description. OPTIONAL
+  :param str location: event location. OPTIONAL
+  :param str summary: event summary. OPTIONAL
+  :rtype: :py:class:`gcalendar.GcalendarEvent`
+  
+  .. py:class:: GcalendarEvent
 
-.. highlight:: lua
+   .. py:method:: getCreator()
+   :returns: event creator
 
-    calEvents = gcalendar.getEvents { calendar = calendar, timeMax = to, timeMin = from }
-    for i = 0, calEvents:getSize()-1 do
-        evt = calEvents:getEvent(i)
-        print evt:getSummary()
-    end
-    
-^^^^^^^^^^^
-addEvent
-^^^^^^^^^^^
+   .. py:method:: getSummary()
+   :returns: event summary
+   
+   .. py:method:: getId()
+   :returns: event gcalendar id
+   
+   .. py:method:: getLocation()
+   :returns: event location
 
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
+   .. py:method:: getDescription()
+   :returns: event description
+   
+   .. py:method:: getStart()
+   :returns: event start time
 
-* calendar object
-* startTime
-* endTime
+   .. py:method:: getEnd()
+   :returns: event end time
 
-Optionals:
+.. function:: getCalendar({ email="", calendarId = "" })
 
-* description
-* location
-* summary
+  "Retrieve a GCalendarCalendar object"
+  
+  :param str email: user email
+  :param str calendarId: user desired calendarId. Defaults to "primary". OPTIONAL
+  :rtype: :py:class:`gcalendar.GCalendarCalendar`
+  
+  .. py:class:: GCalendarCalendar
 
-"""""""""""""
-Return value
-"""""""""""""
-It returns a gcalendar event object with event's specified field. Retrieve them with:
+   .. py:method:: getEmail()
+   :returns: calendar object email
 
-* getCreator (ret: string)
-* getSummary (ret : string)
-* getId (ret: string)
-* getLocation (ret: string)
-* getDescription (ret: string)
-* getStart (ret: string)
-* getEnd (ret: string)
+   .. py:method:: getTimezone()
+   :returns: calendar timezone
+   
+   .. py:method:: getId()
+   :returns: calendar id
 
-""""""""""""""
-Example
-""""""""""""""
+   
+.. function:: removeEvent({ calendar=nil, id="" })
 
-::
+  "Remove a calendar event"
 
-        event = gcalendar.addEvent { calendar = calendar,
-                                     startTime = "2016-05-25T17:59:30",
-                                     endTime = "2016-05-26T12:18:30", 
-                                     description = "Atooma test", 
-                                     location = "Rome", 
-                                     summary = "top" }
-                                 
-^^^^^^^^^^^
-getCalendar
-^^^^^^^^^^^
+  :param instance calendar: :py:class:`gcalendar.GCalendarCalendar`
+  :param str id: gcalendar event id
 
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
+.. function:: scheduleAlarm({ calendar=nil, id="", before= , after=, interval=, times= })
 
-* email
+  "Schedule an alarm on calendar event"
 
-Optionals:
+  :param instance calendar: :py:class:`gcalendar.GCalendarCalendar`
+  :param str id: gcalendar event id
+  :param int before: seconds to schedule alarm before event start
+  :param int after: seconds to schedule alarm after event end
+  :param int interval: interval in seconds between each notification, when times is set. Defaults to off. OPTIONAL
+  :param int after: number of times we want a notification to be sent, with $interval sec between them. Defaults to 1. OPTIONAL
+  
+.. function:: removeAlarm({ id="", alarmType="" })
 
-* calendarId, defaults to "primary"
+  "Schedule an alarm on calendar event"
 
-"""""""""""""
-Return value
-"""""""""""""
-It returns a calendar object needed to call other gcalendarLib methods.
-
-""""""""""""""
-Example
-""""""""""""""
-
-::
-
-    gcalendar.getCalendar { email = "xxxxx@gmail.com" }
-
-^^^^^^^^^^^
-removeEvent
-^^^^^^^^^^^
-
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
-
-* gcalendar event ID
-* calendar object
-
-"""""""""""""
-Return value
-"""""""""""""
-It returns an empty object if everything was successful, or NIL if an error happened.
-
-""""""""""""""
-Example
-""""""""""""""
-
-::
-
-    gcalendar.removeEvent { calendar = calendar, id = "xxxxxxxxxxx" }
-
-^^^^^^^^^^^^^
-scheduleAlarm
-^^^^^^^^^^^^^
-
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
-
-* gcalendar event ID
-* calendar object
-* before OR after integer values
-
-Optionals:
-
-* interval
-* times
-
-* before: seconds before event start time when user wants to be notified.
-* after: seconds after event end time when user wants to be notified.
-* interval: interval in seconds for each notification, when times is set
-* times: number of times we want a notification to be sent, with $interval sec between them.
-
-"""""""""""""
-Return value
-"""""""""""""
-It returns an empty object if everything was successful, or NIL if an error happened.
-
-""""""""""""""
-Example
-""""""""""""""
-
-::
-
-    gcalendar.scheduleAlarm { calendar = calendar, id = "xxxxxx", after = 60, interval = 10, times = 5 }
-
-^^^^^^^^^^^
-removeAlarm
-^^^^^^^^^^^
-
-"""""""""""
-Arguments
-"""""""""""
-**Required**:
-
-* gcalendar event ID
-* alarmType
-
-* alarmType: "After" or "Before". Type of alarm you want to delete.
-
-"""""""""""""
-Return value
-"""""""""""""
-It returns an empty object if everything was successful, or NIL if an error happened.
-
-""""""""""""""
-Example
-""""""""""""""
-
-::
-
-    gcalendar.removeAlarm { id = "xxxxxxxx", alarmType = "After" }
+  :param str alarmType: Whether to remove an "after" or "before" alarm for the event
+  :param str id: gcalendar event id
