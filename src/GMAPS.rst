@@ -24,7 +24,7 @@ Members
    .. py:method:: getLatitude()
    :returns: place's latitude
    
-    .. py:method:: getLongitude()
+   .. py:method:: getLongitude()
    :returns: place's longitude
 
 .. function:: reverseGeocode({ latitude = , longitude =  })
@@ -52,7 +52,7 @@ Members
   :param str transitMode: if travelMode == TRANSIT, specifies mean of transport. No default value. OPTIONAL
   :rtype: :py:class:`gmaps.GmapsDistanceMatrixEvent`
   
-.. py:class:: GmapsDistanceMatrixEvent
+  .. py:class:: GmapsDistanceMatrixEvent
 
    .. py:method:: getDistance()
    :returns: distance in meters
