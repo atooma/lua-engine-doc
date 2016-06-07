@@ -31,6 +31,6 @@ Members
 
   "Enables device's wifi"
   
-  .. function:: disable()
+.. function:: disable()
   
   "Disables device's wifi"
