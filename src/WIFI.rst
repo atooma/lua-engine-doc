@@ -13,7 +13,7 @@ Members
 
   :rtype: :py:class:`wifi.WifiStatusEvent`
 
-.. py:class:: WifiStatusEvent
+  .. py:class:: WifiStatusEvent
 
    .. py:method:: getWifiName()
    :returns: current connected wifi name

@@ -11,7 +11,7 @@ Members
   "Store value object with key"
   
   :param str key: value's associated key
-  :param str value: string or object to be stored
+  :param obj value: string or object to be stored
   
 .. function:: get{ key = "" })
 
