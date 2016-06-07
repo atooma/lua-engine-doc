@@ -22,6 +22,7 @@ Contents:
    src/TIME
    src/BATTERY
    src/WIFI
+   src/STORAGE
 
 Indices and tables
 ==================

@@ -15,6 +15,6 @@ Members
   
 .. function:: showToast({ content = "" })
 
- "Send a toast notification to android device"
+  "Send a toast notification to android device"
 
   :param str content: notification's content
