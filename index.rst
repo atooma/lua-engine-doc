@@ -15,6 +15,7 @@ Contents:
    src/GOOGLE
    src/GMAIL
    src/GCALENDAR
+   src/GMAPS
    src/WEATHER
    src/NOTIFICATION
    src/LOCATION
