@@ -18,7 +18,7 @@ Members
   :raises: LOCATION_TIMEOUT: location request took more than locationTimeout value
   :rtype: :py:class:`location.CurrentLocationEvent`
 
-.. py:class:: CurrentLocationEvent
+  .. py:class:: CurrentLocationEvent
 
    .. py:method:: getLatitude()
    :returns: current device's latitude

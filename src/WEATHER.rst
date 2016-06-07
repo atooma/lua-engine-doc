@@ -16,7 +16,7 @@ Members
   :raises: NO_WEATHER_DATA: no data available for required location
   :rtype: :py:class:`weather.WeatherEvent`
 
-.. py:class:: WeatherEvent
+  .. py:class:: WeatherEvent
 
    .. py:method:: getSize()
    :returns: number of days forecasts cover

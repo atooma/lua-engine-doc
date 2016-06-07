@@ -36,6 +36,11 @@ Gmail
 * GMAIL_SEND_FAIL
 
 ^^^^^^^^^^^
+Gmaps
+^^^^^^^^^^^
+* ADDRESS_NOT_FOUND
+
+^^^^^^^^^^^
 Gcalendar
 ^^^^^^^^^^^
 * CALENDAR_NOT_FOUND

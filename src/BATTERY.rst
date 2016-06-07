@@ -13,7 +13,7 @@ Members
 
   :rtype: :py:class:`battery.BatteryStatusEvent`
 
-.. py:class:: BatteryStatusEvent
+  .. py:class:: BatteryStatusEvent
 
    .. py:method:: isCharging()
    :returns: true if the battery is charging
@@ -27,5 +27,3 @@ Members
    .. py:method:: getLevel()
    :returns: battery level
 
-
-    

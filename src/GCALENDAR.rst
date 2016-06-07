@@ -31,7 +31,7 @@ Members
   :rtype: :py:class:`gcalendar.GcalendarEventsEvent`
   
   
-.. py:class:: GcalendarEventsEvent
+  .. py:class:: GcalendarEventsEvent
 
    .. py:method:: getSize()
    :returns: number of events

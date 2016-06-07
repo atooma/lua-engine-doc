@@ -12,7 +12,7 @@ Members
   
   :rtype: :py:class:`time.TimezoneEvent`
 
-.. py:class:: TimezoneEvent
+  .. py:class:: TimezoneEvent
 
    .. py:method:: getId()
    :returns: timezone ID
@@ -25,7 +25,7 @@ Members
   
   :rtype: :py:class:`time.DateEvent`
 
-.. py:class:: DateEvent
+  .. py:class:: DateEvent
 
    .. py:method:: getDate()
    :returns: rfc3339 string of current date

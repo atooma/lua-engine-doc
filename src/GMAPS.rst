@@ -11,6 +11,7 @@ Members
   "Get latitude and longitude from given address"
 
   :param str address: location's address
+  :raises: ADDRESS_NOT_FOUND: address not found
   :rtype: :py:class:`gmaps.GmapsGeocodeEvent`
   
   .. py:class:: GmapsGeocodeEvent
@@ -33,6 +34,7 @@ Members
 
   :param double latitude: latitude of desired place
   :param double longitude: longitude of desired place
+  :raises: ADDRESS_NOT_FOUND: address not found
   :rtype: :py:class:`gmaps.GmapsGeocodeEvent`
 
 .. function:: getDistance({ lat=, lon=, destLat=, destLon=, travelMode="", avoid="", arrivalTime=, departureTime=, transitMode="" })
