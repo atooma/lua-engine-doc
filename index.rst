@@ -11,18 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-   src/ERROR
-   src/GOOGLE
-   src/GMAIL
-   src/GCALENDAR
-   src/GMAPS
-   src/WEATHER
-   src/NOTIFICATION
-   src/LOCATION
-   src/TIME
-   src/BATTERY
-   src/WIFI
-   src/STORAGE
+   src/*
 
 Indices and tables
 ==================
