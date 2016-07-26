@@ -23,6 +23,7 @@ Contents:
    src/LOCATION
    src/NOTIFICATION
    src/SMS
+   src/SOUND
    src/STORAGE
    src/TIME
    src/TTS
