@@ -1,8 +1,8 @@
-GOOGLE
+FACEBOOK
 ************************
 
-.. module:: google
-   :synopsis: Module that handles interaction with Google
+.. module:: facebook
+   :synopsis: Module that handles interaction with Facebook
 
 Members
 =========================
@@ -28,13 +28,20 @@ Members
    
    .. py:method:: getScope()
    :returns: scope on which user is logged in
-    
-.. function:: removeAuth({ email = "", scope = "" })
+   
+.. function:: removeAuth({ userid = "", scope = "" })
 
-  "Remove auth for email user, on specified scopes"
+  "Remove auth for userid, on specified scopes"
     
   :param str scope: list of scopes
-  :param str email: user mail address
+  :param str userid: userid
   :raises: ACCOUNT_NOT_FOUND: account could not be found
   :raises: SCOPE_NOT_FOUND: scope could not be found
 
+.. function:: addSubscription({ userId = userid, object = "", fields = "" })
+
+  "Adds a subscription on certain user feed"
+  
+  :param str userid: userid
+  :param str object: object type that this subscription applies to
+  :param str fields: fields of the subscription

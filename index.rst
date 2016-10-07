@@ -16,17 +16,21 @@ Contents:
    src/BATTERY
    src/CONTACT
    src/ERROR
+   src/FACEBOOK
+   src/FITBIT
    src/GCALENDAR
    src/GMAIL
    src/GMAPS
    src/GOOGLE
    src/LOCATION
    src/NOTIFICATION
+   src/PERMISSION
    src/SMS
    src/SOUND
    src/STORAGE
    src/TIME
    src/TTS
+   src/TWITTER
    src/WEATHER
    src/WIFI
 
