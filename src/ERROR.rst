@@ -22,13 +22,27 @@ Generic
 * EXCEPTION
 
 ^^^^^^^^^^^
+Alarm
+^^^^^^^^^^^
+* ALARM_ERROR
+* NO_ALARM
+
+^^^^^^^^^^^
+App
+^^^^^^^^^^^
+* APP_NOT_FOUND
+
+^^^^^^^^^^^
+Contact
+^^^^^^^^^^^
+* CONTACT_NOT_FOUND
+* CONTACT_ERROR
+
+^^^^^^^^^^^
 Google
 ^^^^^^^^^^^
-* AUTH_FAIL
-* AUTH_NOT_GRANTED
 * ACCOUNT_NOT_FOUND
 * SCOPE_NOT_FOUND
-* UNRECOVERABLE_AUTH_EXCEPTION
 
 ^^^^^^^^^^^
 Gmail
@@ -53,11 +67,37 @@ Location
 * GPS_DISABLED
 * NO_GEOLOCATION_SERVICES
 * LOCATION_TIMEOUT
+* GEOFENCE_NOTFOUND
+* GENERIC_ERROR
 
 ^^^^^^^^^^^
-Scheduler
+Oauth2
 ^^^^^^^^^^^
-* SCHEDULING_ERROR
+* AUTH_FAIL
+* AUTH_NOT_GRANTED
+* UNRECOVERABLE_AUTH_EXCEPTION
+* INVALID_TOKEN
+* SCOPE_NOT_PRESENT
+* AUTH_REMOVAL_FAILED
+* PUBSUB_ERROR
+* TOKENSTORE_TIMEOUT
+
+^^^^^^^^^^^
+Permission
+^^^^^^^^^^^
+* PERM_NOT_GRANTED
+* NO_PERM
+
+^^^^^^^^^^^
+Sms
+^^^^^^^^^^^
+* SMS_NOT_SENT
+
+^^^^^^^^^^^
+Sound
+^^^^^^^^^^^
+* NO_SUCH_MODE
+* GENERIC_ERROR
 
 ^^^^^^^^^^^
 Storage
@@ -65,6 +105,7 @@ Storage
 * KEY_NOT_FOUND
 * RULE_NOT_FOUND
 * OBJECT_NULL
+* PERSIST_FAILED
 
 ^^^^^^^^^^^
 Weather
