@@ -34,20 +34,20 @@ Members
     .. py:method:: getAddress()
     :returns: Place's address
     :rtype: :py:class:`place.Address`
-    
-     .. py:class:: Address
-     
-      .. py:method:: getCity()
-      :returns: address' city
 
-      .. py:method:: getRoad()
-      :returns: address' road
+    .. py:class:: Address
+
+     .. py:method:: getCity()
+     :returns: address' city
+
+     .. py:method:: getRoad()
+     :returns: address' road
       
-      .. py:method:: getPostcode()
-      :returns: address' postcode
+     .. py:method:: getPostcode()
+     :returns: address' postcode
       
-      .. py:method:: getCountryCode()
-      :returns: address' country code
+     .. py:method:: getCountryCode()
+     :returns: address' country code
       
-      .. py:method:: getCountry()
-      :returns: address' country
+     .. py:method:: getCountry()
+     :returns: address' country
