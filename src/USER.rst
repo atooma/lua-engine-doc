@@ -17,6 +17,7 @@ Members
 
    .. py:method:: getHome()
    :returns: home place
+   :rtype: :py:class:`Place`
 
    .. py:method:: getWork()
    :returns: work place
@@ -28,25 +29,25 @@ Members
     :returns: Place's latitude
 
     .. py:method:: getLongitude()
-    :returns: Place's getLongitude
+    :returns: Place's longitude
     
     .. py:method:: getAddress()
-    :returns: Place's getAddress
+    :returns: Place's address
     :rtype: :py:class:`place.Address`
     
      .. py:class:: Address
      
       .. py:method:: getCity()
-      :returns: city
+      :returns: address' city
 
       .. py:method:: getRoad()
-      :returns: road
+      :returns: address' road
       
       .. py:method:: getPostcode()
-      :returns: postcode
+      :returns: address' postcode
       
       .. py:method:: getCountryCode()
-      :returns: country code
+      :returns: address' country code
       
       .. py:method:: getCountry()
-      :returns: country
+      :returns: address' country
