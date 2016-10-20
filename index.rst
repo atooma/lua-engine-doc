@@ -11,11 +11,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
+   src/ERROR
+   src/TRIGGERS
    src/ALARM
    src/APP
    src/BATTERY
    src/CONTACT
-   src/ERROR
    src/FACEBOOK
    src/FITBIT
    src/GCALENDAR
@@ -31,6 +32,7 @@ Contents:
    src/TIME
    src/TTS
    src/TWITTER
+   src/USER
    src/WEATHER
    src/WIFI
 
