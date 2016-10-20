@@ -9,7 +9,7 @@ Members
 
 .. function:: getPlaces()
 
-  "Return user places"
+  "Returns user places"
 
   :rtype: :py:class:`user.UserPlacesEvent`
 
@@ -20,7 +20,7 @@ Members
 
    .. py:method:: getWork()
    :returns: work place
-
+   :rtype: :py:class:`Place`
    
    .. py:class:: Place
     
@@ -50,5 +50,3 @@ Members
       
       .. py:method:: getCountry()
       :returns: country
-
-      
