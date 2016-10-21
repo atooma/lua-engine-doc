@@ -11,7 +11,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-   src/ERROR     src/TRIGGERS
+   src/ERROR
+   src/TRIGGERS
    src/ALARM
    src/APP
    src/BATTERY
