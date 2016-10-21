@@ -57,6 +57,14 @@ Members
 
   "Called when user is detected entering work place. Our sdk provides this function without any need to manually add any geofence."
   
+.. function:: onUserLeftHomeEvent()
+
+  "Called when user is detected leaving home. Our sdk provides this function without any need to manually add any geofence."
+  
+.. function:: onUserLeftWorkEvent()
+
+  "Called when user is detected leaving work place. Our sdk provides this function without any need to manually add any geofence."
+  
 .. function:: onHeadsetPlugEvent()
 
   "Called when device detects headset plugging."
